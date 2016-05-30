@@ -1,0 +1,137 @@
+{
+	"$prototypes": {
+		"menuBlock": {
+			"$key": "code",
+			"items": {
+				"$variants": {
+					"menuItem": {
+						"$key": "code",
+						"application": {
+							"$key": [
+								"application",
+								"contract"
+							]
+						},
+						"$localized": [
+							"title",
+							"description"
+						]
+					}
+				}
+			},
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"$localized": [
+				"title",
+				"description"
+			]
+		},
+		"menuItem": {
+			"$key": "code",
+			"application": {
+				"$key": [
+					"application",
+					"contract"
+				]
+			},
+			"$localized": [
+				"title",
+				"description"
+			]
+		}
+	},
+	"$items": [
+		{
+			"$type": "menuItem",
+			"code": "AWS_CONNECTION",
+			"title": "title_AWS_CONNECTION",
+			"description": "description_AWS_CONNECTION",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "aws_iot_connections",
+				"representation": "aws_iot_connection"
+			}
+		},
+		{
+			"$type": "menuItem",
+			"code": "AWS_READINGS",
+			"title": "title_AWS_READINGS",
+			"description": "description_AWS_READINGS",
+			"linkType": "$representation",
+			"applicationMenu": false,
+			"facet": "$query",
+			"target": "self",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"endpoint": null,
+			"representationRef": {
+				"$type": "representationProxy",
+				"entity": "aws_iot_readings",
+				"representation": "aws_iot_reading"
+			}
+		},
+		{
+			"$type": "menuBlock",
+			"code": "AWS_IOT",
+            "title": "title_AWS_IOT",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"items": [{
+                "code": "AWS_CONNECTION",
+                "$variantType": "menuItem"
+            }, {
+                "code": "AWS_READINGS",
+                "$variantType": "menuItem"
+            }]
+		},
+		{
+			"$type": "menuModule",
+			"code": "AWS_IOT",
+			"title": "title_AWS_IOT",
+			"application": {
+				"application": "syracuse",
+				"contract": "collaboration"
+			},
+			"submodules": [
+				{
+					"code": "AWS_IOT"
+				}
+			]
+		},
+		{
+			"$type": "navigationPage",
+			"pageName": "home",
+			"modules": [
+				{
+					"code": "AWS_IOT"
+				}
+			]
+		}
+    ],
+	"$localization": {
+        "en-us": {
+            "title_AWS_CONNECTION": "AWS IOT connections",
+            "title_AWS_READINGS": "AWS IOT readings",
+            "description_AWS_CONNECTION": "AWS IOT Connections",
+            "description_AWS_READINGS": "AWS IOT readings",
+            "title_AWS_IOT": "AWS IOT"
+        }
+    }
+}

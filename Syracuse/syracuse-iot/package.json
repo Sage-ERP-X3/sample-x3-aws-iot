@@ -1,0 +1,22 @@
+{
+  "name": "syracuse-iot",
+  "description": "Sage Samples for IOT",
+  "version": "0.1.0",
+  "author": "Sage",
+  "private": true,
+  "sage": {
+    "x3": {
+      "extensions": {
+        "contracts": [
+          {
+            "module": "syracuse-iot/lib/contract-extension"
+          }
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "aws-iot-device-sdk": "^1.0.12",
+    "proxy-agent": "^2.0.0"
+  }
+}
