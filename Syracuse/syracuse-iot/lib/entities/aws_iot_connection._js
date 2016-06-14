@@ -133,6 +133,12 @@ exports.entity = {
             if (!self.device) self.connect(_);
             if (!self.device) throw new Error("No device after connect !");
             self.device.subscribe(topic.topic(_));
+        },
+        unsubscribe: function(_, topic) {
+            var self = this;
+            if (!self.device) self.connect(_);
+            if (!self.device) throw new Error("No device after connect !");
+            self.device.unsubscribe(topic.topic(_));
         }    
     },
     $services: {

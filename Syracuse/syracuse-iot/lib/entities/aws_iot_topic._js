@@ -48,6 +48,26 @@ exports.entity = {
         }
     },
 	$services: {
+        subscribe: {
+            $method: "POST",
+            $isMethod: true,
+            $title: "Subscribe",
+			$execute: function(_, context, instance) {
+                instance._parent.subscribe(_, instance);    
+                instance.$addDiagnose("info", "Subscribed to " + instance.topic(_));
+                console.log("Subscribed", instance.topic(_));
+            }
+        },
+        unsubscribe: {
+            $method: "POST",
+            $isMethod: true,
+            $title: "Unsubscribe",
+			$execute: function(_, context, instance) {
+                instance._parent.unsubscribe(_, instance);    
+                instance.$addDiagnose("info", "Unsubscribed to " + instance.topic(_));
+                console.log("Unsubscribed", instance.topic(_));
+            }
+        },
 /*		test: {
             $method: "POST",
             $isMethod: true,
